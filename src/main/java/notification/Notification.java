@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Notification extends BaseEntity
+public class Notification extends BaseEntity<UUID>
 {
     private UUID notificationId;
     private UUID customerId;

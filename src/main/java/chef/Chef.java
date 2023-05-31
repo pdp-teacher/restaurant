@@ -12,7 +12,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Chef extends BaseEntity
+public class Chef extends BaseEntity<UUID>
 {
     private UUID chefId;
     private String chefName;

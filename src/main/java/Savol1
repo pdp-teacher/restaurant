@@ -1,0 +1,14 @@
+ThreadPool bu threadlar saqlanadigan hovuzdir.
+ThreatPool yaratish uchun biz Executer frenvorkidan foydalanamiz.
+Executer frenvorki bizga nima qilib beredi.
+Executer  bizga  malum bir usullarda threadlarni yaratib beradi.
+Executorsdan Executer ,ExecuterServise, ScheduleExecutorsServise lar exdent  olgan.
+
+
+ThreatPoolning turlari bor.
+1.New SingleThreat()  --- bu threatpoolda bitta threat bo'ladi;
+Bittalik threatlardan farqi shuki Bu threat vazifani bajarib bo'lib o'maydi.
+2. newFixetThreatPool(int n)  ---- bu biz n kiritamiz  bizga n ta threat bo'lgan threatpool yaratib beradi
+ va threatlar o'lmaydi.
+3.newScheduleThreatPool(int  corePoolsize)  ----- yani bizda nechta kiritsak  shuncha threat boladi.
+4.newWorkStealingPool  -----  Fronk Joinda qo'llaniladi.

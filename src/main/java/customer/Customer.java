@@ -12,11 +12,12 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Customer extends BaseEntity
+public class Customer extends BaseEntity<UUID>
 {
     private UUID id;
     private String customerName;
     private String address;
     private String phone;
     private UUID waiterId;
+    
 }

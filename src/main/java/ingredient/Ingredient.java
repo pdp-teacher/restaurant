@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Ingredient extends BaseEntity
+public class Ingredient extends BaseEntity<UUID>
 {
     private Integer ingredientId;
     private String ingredientName;
