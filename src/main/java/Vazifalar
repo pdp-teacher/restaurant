@@ -1,4 +1,4 @@
 1. Thread poollar haqida yozing. 15 ball.
-2. Hamma Entity lar uchun repository lar yarating. va ular Listni faylga saqlasin
+2. Hamma Entity lar uchun repository lar yarating. va ular Listni faylga saqlasin. Base entityda id ni generic qiling
 3. Notification Service ni threadlar bilan ishlaydigan qiling. sendNotification 1 ta alohida threadni ishlatib yuborsin.
 sendNotificationInBunch esa thread pool orqali threadlarni ishga tushurib yuborsin.
