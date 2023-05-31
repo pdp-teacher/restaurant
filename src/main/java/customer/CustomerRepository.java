@@ -37,4 +37,13 @@ public class CustomerRepository extends BaseRepository<Customer,UUID> {
     protected String getFilePath() {
         return PATH;
     }
+
+    public Customer findByID(UUID customerId) {
+        for (Customer customer : getList()) {
+            if(customer.getId().equals(customerId)){
+                return customer;
+            }
+        }
+        return null;
+    }
 }

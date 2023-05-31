@@ -37,5 +37,4 @@ public class ChefRepository extends BaseRepository<Chef, UUID> {
     protected String getFilePath() {
         return PATH;
     }
-}{
 }

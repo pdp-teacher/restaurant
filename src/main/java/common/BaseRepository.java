@@ -52,8 +52,10 @@ public abstract class BaseRepository <ENTITY extends BaseEntity<UUID>,ID> implem
 
     public List<ENTITY> readFromFile(){
 
+        List<ENTITY> savedFile = new ArrayList<>();
         try(ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(getFilePath()))){
 
+            savedFile = (List<ENTITY>) objectInputStream.readObject();
             objectInputStream.readObject();
             return (List<ENTITY>) objectInputStream;
 
@@ -61,7 +63,7 @@ public abstract class BaseRepository <ENTITY extends BaseEntity<UUID>,ID> implem
             e.printStackTrace();
         }
 
-        return new ArrayList<>();
+        return savedFile;
     }
 
 
@@ -75,7 +77,11 @@ public abstract class BaseRepository <ENTITY extends BaseEntity<UUID>,ID> implem
         }
 
     }
+
+
 }
+
+
 
 
 
