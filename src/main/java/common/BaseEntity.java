@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BaseEntity
-{
+public class BaseEntity<ID> {
+    protected  ID id;
     private LocalDateTime created;
     private LocalDateTime updated;
 }

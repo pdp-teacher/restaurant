@@ -1,4 +1,31 @@
 1. Thread poollar haqida yozing. 15 ball.
-2. Hamma Entity lar uchun repository lar yarating. va ular Listni faylga saqlasin
+2. Hamma Entity lar uchun repository lar yarating va ular Listni faylga saqlasin
 3. Notification Service ni threadlar bilan ishlaydigan qiling. sendNotification 1 ta alohida threadni ishlatib yuborsin.
 sendNotificationInBunch esa thread pool orqali threadlarni ishga tushurib yuborsin.
+
+
+1.ThreadPool bu threadlar saqlanadigan hovuz desak ham boladi.
+
+Dasturimizda bir nechta vazifalarni yoki tasklarni bajarishimiz uchun yangi threadlar yaratamiz
+va tasklarni bajarish uchun threadlarga berib yuboramiz.Threadlar ishlashi uchun esa ularga yaratgan
+runnable objectini beramiz.Dasturimizda parallel ishlaydigan tasklar bo'lishi mumkin ,agar shunday bo'lsa
+parallel ishlash kerak bo'ladigan alohida threadlarni yaratamiz va shu yaratgan threadimizga tasklarni berib yuboramiz.
+
+Executors freamwork classi har xil service,schedular interfacelarni implementatsiyasini yaratib berish uchun Factory()
+metodi bor class hisoblanadi.Bizga maxsus usulda threadpool yaratib beradi.
+
+EXECUTORS --> 1-Executors, 2-ExecutorService, 3-ScheduledExecutorService;
+
+Thread Pool turlari bor: Ular 1-New Single thread pool :Ichida bitta threadi bor thread pool hisoblanadi.Uning asosiy vazifasi
+Vazifalarni ketma-ket bajarish uchun ,orderga qo'yish uchun kerak bo'ladi.
+
+2-New Fixsed thread pool:Bu thread pool biz nechta thread yaratib unga bersak yaratgan thredlarimizni qabul qiladi
+ va unda shuncha thread pool bo'ladi.
+
+ 3-New Cached thread pool :Bu thread poolda default bitta thread bo'ladi, bu thread poolda tasklarni soni  ortib borgan sari
+ threadlar ham ortib boradi.Agar threadlar threadlarni vazifasi bolmasa yoki uni tugatsa ularni o'ldiradi yoki yo'q qiladi.
+
+ Bularning hammasi javaning 1.5 versiyasidan qo'shilgan.
+ New workSteling Pool() bu javaning 1.8 versiyasidan qoshilgan.
+
+

@@ -12,8 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Waiter extends BaseEntity
-{
+public class Waiter extends BaseEntity<UUID> {
     private UUID waiterId;
     private String waiterName;
     private Double salary;
