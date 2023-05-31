@@ -6,13 +6,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @EqualsAndHashCode( callSuper = true )
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Meal extends BaseEntity
+public class Meal extends BaseEntity<UUID> implements Serializable
 {
     private UUID mealId;
     private String name;
