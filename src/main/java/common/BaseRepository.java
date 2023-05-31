@@ -24,35 +24,30 @@ public abstract class BaseRepository <ENTITY extends  BaseEntity<ID>,ID> impleme
     public void deleteById(ID id) {
 
     }
-   /* protected List<ENTITY>readFromFile(){
-        try(ObjectInputStream stream = new ObjectInputStream(new FileInputStream(getFilePath())))
-    }*/
+    protected List<ENTITY>readFromFile(){
+        try(ObjectInputStream stream = new ObjectInputStream(new FileInputStream(getFilePath()))) {
+            return (List<ENTITY>)stream.readObject();
+        }
 
-    /*protected List<ENTITY> readFromFile()
-    {
-        try( ObjectInputStream stream = new ObjectInputStream( new FileInputStream( getFilePath() ) ) )
-        {
-            return (List<ENTITY>) stream.readObject();
+        catch ( IOException e) {
+            throw new RuntimeException(e);
         }
-        catch( IOException e )
-        {
-            throw new RuntimeException( e );
-        }
-        catch( ClassNotFoundException e )
-        {
-            throw new RuntimeException( e );
-        }
-    }*/
 
-    protected void writeToFile( List<ENTITY> entities )
-    {
-        try( ObjectOutputStream stream = new ObjectOutputStream( new FileOutputStream( getFilePath() ) ) )
-        {
-            stream.writeObject( entities );
+        catch ( ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        catch( IOException e )
+    }
+
+    protected void writeToFile(List<ENTITY> entities){
+        try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(getFilePath())))
+        {
+            stream.writeObject(entities);
+        }
+        catch ( IOException e)
         {
             e.printStackTrace();
         }
     }
+
+
 }

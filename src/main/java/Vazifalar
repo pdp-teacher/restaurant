@@ -2,3 +2,10 @@
 2. Hamma Entity lar uchun repository lar yarating. va ular Listni faylga saqlasin
 3. Notification Service ni threadlar bilan ishlaydigan qiling. sendNotification 1 ta alohida threadni ishlatib yuborsin.
 sendNotificationInBunch esa thread pool orqali threadlarni ishga tushurib yuborsin.
+
+//1- savolga javob -
+Java da Thread operatsion tizimning resurslari bolgan tizim darajasidagi Thread bilan taqqoslanadi agar biz nazoratsiz
+ ravishda Thread yaratsak bu resurslardan tezda tugashimiz mumkin
+ Operatsion tizim parallelizmga taqlid qilish uchun Thread orasidagi kontekst almashinuvini ham amalga oshiradi
+Oddiy fikr shundan iboratki biz qanchalik kop Thread paydo bolsa har bir Thread haqiqiy ishni bajarish uchun kamroq vaqt
+ sarflaydi
