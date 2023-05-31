@@ -37,5 +37,6 @@ public abstract class BaseRepository<Entity extends BaseEntity,ID> implements Re
             e.printStackTrace();
         }
         return new ArrayList<>();
+
     }
 }
