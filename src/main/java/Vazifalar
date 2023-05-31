@@ -2,3 +2,21 @@
 2. Hamma Entity lar uchun repository lar yarating. va ular Listni faylga saqlasin
 3. Notification Service ni threadlar bilan ishlaydigan qiling. sendNotification 1 ta alohida threadni ishlatib yuborsin.
 sendNotificationInBunch esa thread pool orqali threadlarni ishga tushurib yuborsin.
+
+
+
+1 - task:
+Thread pool bu bir yoki bir nechta threadlardan tashkil topgan va tasklarni kutayotgan threadlar hovuzidir.Agar biz har bir task
+uchun alohida bitta thread yaratsak u OS uchun qoshimcha resurslar talab qiladi. Lekin Thread Poollar yordamida biz avvaldan mavjud
+bolgan threadlar orqali kelayotgan taskni bosh bolgan ixtiyoriy Thread bajaradi.Tasklar BlokingQueuda saqlanadi.
+Biz thread Pollarni Executor interfeysining sub classlari bolmish Executors, ExecutorsService kabi classalrdan foydalanib yaratamiz.
+-----------------------------------------------------
+ 1) Executors.newSingleThreadExecutor() --> bitta Thread dan iborat Thread Pool ni yaratadi.U bir vaqtning ozida bir nechta taskni bajarishni qollab quvvatlamaydi va
+vazifalarni thread ketma ket bajaradi.
+2) Executor.newFixedThreadPoll --> berilagan nt aThreaddan iborat Thread pool yaratadi.
+3)Executros.newCashedThreadPool --> U tasklar hajmiga qarab yangi thread yaratadi. Threadlarning yaratilish chegarasi yoq.U zarur bolsa yangi iplarni yaratadi, lekin mavjud bolganda mavjud
+Threadlarni qayta ishlatadi.Agar ThreadPoolda 60 soniya ichida ishlatilmagan Threadlar mavjud bolsa u pooldan ochiriladi.
+4) Executors.newSingleThreadScheduledExecutor() --> bu fazifalarni rejalashtrish mumkin bolgan bittalik ip pulini qaytaradi.
+5) Executors.newScheduledThreadPool --> bu fazifalarni rejalashtirish uchun kiritilgan Threadlar soniga teng bolgan Thread Pool yaratadi.
+new ScheduledThread executror dan yaratilgan ikkita metod bor; Bular scheduleWithFixedDelay --> Threadning sleep vaqti va har bir vaqt orasida ishlash vaqtini qoshgan holda ish bajaradi.
+scheduleAtFixedRate esa bularni qoshmaydi va kattasini oraligida bajaradi.

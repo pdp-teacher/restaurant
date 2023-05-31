@@ -18,7 +18,7 @@ public class NotificationService
         // avval notification repository ga saqlashimizi kerak.
 
         // customer ni customer repository orqali id bo'yicha olish kerak. id Notificationni ichida bor.
-        notificationSender.sendNotification( notification, customer );
+        notificationSender.sendNotification( notification,new Customer() );
     }
 
     public void sendNotificationInBunch( List<Notification> notifications )
