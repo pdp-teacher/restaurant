@@ -1,0 +1,8 @@
+Thread poollar haqida yozing.
+
+Thread pool bu bir nechta threadlar guruhi deb tushunilsa bo'ladi. Thraed poollar Executor frameworkida taqdim etilgan.
+Taskning soni juda ko'p bo'lgan paytda thread pool yaratish tavsiya etiladi. Thread pool yaratilganda biz threadlar sonini
+custom bervorishimiz ham mumkin. Tasklar thread scheduler orqali taqsimlanadi. Executor interfacida bir nechta thread pool yaratadigan statik metodlari bor:
+1) Executors.newCachedThreadPool()- Bu thread pool taskning hajmiga qarab avtomatik threadlar ochadi. agar soni berilsa shuncha thread yaratadi
+2) Executors.newSingleThreadExecutor()- Bu bittalik thread bo'lgan pool yaratadi
+
